@@ -49,3 +49,9 @@ end
 def age_18_plus?(candidate)
   return candidate[:age] > 17
 end
+
+# Sort candidates by years of experience in descending order
+# If years of experience are the same, sort by github points in descending order
+def ordered_by_qualifications(candidates)
+ return candidates.sort_by { |candidate| [-candidate[:years_of_experience], -candidate[:github_points]] }
+end
